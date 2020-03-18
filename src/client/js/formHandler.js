@@ -1,3 +1,6 @@
+const port = process.env.PORT || 8081;
+const host = "0.0.0.0";
+
 function handleTextSubmit(event) {
   // Prevent default action for the event
   event.preventDefault();
@@ -16,7 +19,7 @@ function handleTextSubmit(event) {
         // Analyze text only if language is supported
         if (supportedLanguages.includes(data.lang)) {
           console.log("::: Text Form Submitted :::");
-          fetch("http://localhost:8081/sentiment", {
+          fetch(`http://${host}:${port}/sentiment`, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -50,7 +53,7 @@ function handleUrlSubmit(event) {
   console.log("::: URL Form Submitted :::");
   // Analyze URL only if valid
   if (Client.checkForUrl(JSON.parse(JSON.stringify(urlToAnalyze)))) {
-    fetch("http://localhost:8081/sentiment", {
+    fetch(`http://${host}:${port}/sentiment`, {
       method: "POST",
       mode: "cors",
       headers: {

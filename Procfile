@@ -1,1 +1,1 @@
-web: node ./src/server/index.js
+web: npm run build-prod & npm run start & wait -n
