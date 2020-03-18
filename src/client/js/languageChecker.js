@@ -1,9 +1,6 @@
-const port = process.env.PORT || 8081;
-const host = "0.0.0.0";
-
 async function checkForLanguage(input) {
   console.log("::: Running checkForLanguage :::", input);
-  const response = await fetch(`http://${host}:${port}/language`, {
+  const response = await fetch(`/language`, {
     method: "POST",
     mode: "cors",
     headers: {
