@@ -1,6 +1,6 @@
 async function checkForLanguage(input) {
   console.log("::: Running checkForLanguage :::", input);
-  const response = await fetch(`/language`, {
+  const response = await fetch("http://localhost:8081/language", {
     method: "POST",
     mode: "cors",
     headers: {

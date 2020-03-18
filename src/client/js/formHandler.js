@@ -16,7 +16,7 @@ function handleTextSubmit(event) {
         // Analyze text only if language is supported
         if (supportedLanguages.includes(data.lang)) {
           console.log("::: Text Form Submitted :::");
-          fetch(`/sentiment`, {
+          fetch("http://localhost:8081/sentiment", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -50,7 +50,7 @@ function handleUrlSubmit(event) {
   console.log("::: URL Form Submitted :::");
   // Analyze URL only if valid
   if (Client.checkForUrl(JSON.parse(JSON.stringify(urlToAnalyze)))) {
-    fetch(`/sentiment`, {
+    fetch("http://localhost:8081/sentiment", {
       method: "POST",
       mode: "cors",
       headers: {
