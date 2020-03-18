@@ -24,7 +24,7 @@ app.use(
 /* when running node index.js from within server folder
 app.use(express.static(path.join("../..", "dist")));
 */
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static("dist"));
 
 const port = process.env.PORT || 8081;
 const host = "0.0.0.0";
@@ -36,7 +36,7 @@ app.get("/", (request, response) => {
   /* when running node index.js from within server folder
   res.sendFile("index.html", { root: "../../dist" });
   */
-  response.sendFile(path.join(__dirname, "dist/index.html"));
+  response.sendFile(path.resolve("src/client/views/index.html"));
 });
 
 /**
